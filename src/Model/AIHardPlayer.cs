@@ -93,6 +93,10 @@ public class AIHardPlayer : AIPlayer
 	private List<Target> _LastHit = new List<Target>();
 
 	private Target _CurrentTarget;
+	/// <summary>
+	/// Initializes a new instance of the <see cref="AIHardPlayer"/> class.
+	/// </summary>
+	/// <param name="game">Game.</param>
 	public AIHardPlayer(BattleShipsGame game) : base(game)
 	{
 	}

@@ -11,16 +11,23 @@ using System.Diagnostics;
 /// </summary>
 public interface ISeaGrid
 {
-
-
+	/// <summary>
+	/// Gets the width.
+	/// </summary>
+	/// <value>The width.</value>
 	int Width { get; }
 
+	/// <summary>
+	/// Gets the height.
+	/// </summary>
+	/// <value>The height.</value>
 	int Height { get; }
 	/// <summary>
 	/// Indicates that the grid has changed.
 	/// </summary>
 
 	event EventHandler Changed;
+
 	/// <summary>
 	/// Provides access to the given row/column
 	/// </summary>
@@ -28,7 +35,6 @@ public interface ISeaGrid
 	/// <param name="column">the column to access</param>
 	/// <value>what the player can see at that location</value>
 	/// <returns>what the player can see at that location</returns>
-
 	TileView this[int row, int col] { get; }
 
 	/// <summary>

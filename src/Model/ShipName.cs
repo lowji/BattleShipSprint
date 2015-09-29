@@ -11,11 +11,29 @@ using System.Diagnostics;
 /// <remarks></remarks>
 public enum ShipName
 {
+	/// <summary>
+	/// The none.
+	/// </summary>
 	None = 0,
+	/// <summary>
+	/// The tug.
+	/// </summary>
 	Tug = 1,
+	/// <summary>
+	/// The submarine.
+	/// </summary>
 	Submarine = 2,
+	/// <summary>
+	/// The destroyer.
+	/// </summary>
 	Destroyer = 3,
+	/// <summary>
+	/// The battleship.
+	/// </summary>
 	Battleship = 4,
+	/// <summary>
+	/// The aircraft carrier.
+	/// </summary>
 	AircraftCarrier = 5
 }
 
