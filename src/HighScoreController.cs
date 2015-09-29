@@ -34,6 +34,7 @@ static class HighScoreController
 	{
 		public string Name;
 
+		
 		public int Value;
 		/// <summary>
 		/// Allows scores to be compared to facilitate sorting

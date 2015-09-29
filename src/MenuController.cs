@@ -22,6 +22,7 @@ using static HighScoreController;
 static class MenuController
 {
 
+
 	/// <summary>
 	/// The menu structure for the game.
 	/// </summary>

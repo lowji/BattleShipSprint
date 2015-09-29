@@ -19,6 +19,7 @@ using static HighScoreController;
 /// </summary>
 static class UtilityFunctions
 {
+
 	public const int FIELD_TOP = 122;
 	public const int FIELD_LEFT = 349;
 	public const int FIELD_WIDTH = 418;
