@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="BattleShips.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/GameController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Model/Tile.cs">
     <Files>
-      <File FileName="src/Model/AIPlayer.cs" Line="65" Column="68" />
-      <File FileName="src/Model/AIHardPlayer.cs" Line="209" Column="1" />
-      <File FileName="src/Model/AIMediumPlayer.cs" Line="1" Column="1" />
-      <File FileName="src/GameController.cs" Line="1" Column="1" />
+      <File FileName="src/UtilityFunctions.cs" Line="222" Column="2" />
+      <File FileName="src/GameController.cs" Line="48" Column="2" />
+      <File FileName="src/DeploymentController.cs" Line="130" Column="29" />
+      <File FileName="src/Model/SeaGrid.cs" Line="32" Column="32" />
+      <File FileName="src/Model/Tile.cs" Line="63" Column="72" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
