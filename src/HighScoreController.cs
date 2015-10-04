@@ -23,9 +23,26 @@ using static HighScoreController;
 /// </remarks>
 static class HighScoreController
 {
+	private static readonly string[][] _menuStructure = 
+	{
+		new string[] 
+		{
+			"RETURN"
+		}
+	};
+	private const int MENU_TOP = 575;
+	private const int MENU_LEFT = 30;
+	private const int MENU_GAP = 0;
+	private const int BUTTON_WIDTH = 75;
+	private const int BUTTON_HEIGHT = 15;
+	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
+	private const int TEXT_OFFSET = 0;
+	private const int HIGHSCORE_MENU = 0;
 	private const int NAME_WIDTH = 3;
-
 	private const int SCORES_LEFT = 490;
+	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
+	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
+
 	/// <summary>
 	/// The score structure is used to keep the name and
 	/// score of the top players together.
@@ -121,6 +138,31 @@ static class HighScoreController
 		output.Close();
 	}
 
+	private static void DrawButtons(int menu, int level, int xOffset)
+	{
+		int btnTop = 0;
+
+		btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
+		int i = 0;
+		for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
+			int btnLeft = 0;
+			btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
+			SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
+
+			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
+				SwinGame.DrawRectangle(HIGHLIGHT_COLOR, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+			}
+		}
+	}
+
+	private static bool IsMouseOverMenu(int button, int level, int xOffset)
+	{
+		int btnTop = MENU_TOP - (MENU_GAP + BUTTON_HEIGHT) * level;
+		int btnLeft = MENU_LEFT + BUTTON_SEP * (button + xOffset);
+
+		return IsMouseInRectangle(btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT);
+	}
+
 	/// <summary>
 	/// Draws the high scores to the screen.
 	/// </summary>
@@ -149,6 +191,7 @@ static class HighScoreController
 				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.White, GameFont("Courier"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			}
 		}
+		DrawButtons (HIGHSCORE_MENU, 0, 0);
 	}
 
 	/// <summary>
@@ -157,8 +200,13 @@ static class HighScoreController
 	/// <remarks></remarks>
 	public static void HandleHighScoreInput()
 	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
+		if (SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
 			EndCurrentState();
+		}
+		if (SwinGame.MouseClicked(MouseButton.LeftButton)) {
+			if (IsMouseOverMenu(0, 0, 0)) {
+				EndCurrentState();
+			}
 		}
 	}
 
