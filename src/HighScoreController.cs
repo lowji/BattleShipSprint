@@ -15,6 +15,7 @@ using static EndingGameController;
 using static MenuController;
 using static HighScoreController;
 
+
 /// <summary>
 /// Controls displaying and collecting high score data.
 /// </summary>
