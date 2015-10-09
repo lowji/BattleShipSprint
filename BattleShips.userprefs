@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="BattleShips.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/MenuController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\4964241\Desktop\BattleShipSprint\src\DeploymentController.cs">
     <Files>
-      <File FileName="src/GameController.cs" Line="92" Column="25" />
-      <File FileName="src/MenuController.cs" Line="301" Column="9" />
-      <File FileName="src/Model/AIHardPlayer.cs" Line="100" Column="2" />
-      <File FileName="src/Model/AIMediumPlayer.cs" Line="36" Column="2" />
-      <File FileName="src/Model/AIPlayer.cs" Line="85" Column="52" />
-      <File FileName="src/Model/AIOption.cs" Line="1" Column="1" />
+      <File FileName="src\GameController.cs" Line="1" Column="1" />
+      <File FileName="src\MenuController.cs" Line="301" Column="9" />
+      <File FileName="src\Model\AIHardPlayer.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIMediumPlayer.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIPlayer.cs" Line="1" Column="1" />
+      <File FileName="src\Model\AIOption.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\4964241\Desktop\BattleShipSprint\src\DeploymentController.cs" Line="8" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
