@@ -220,6 +220,14 @@ static class DeploymentController
 
 			}
 		}
+		
+		//Draw ShipsName
+		SwinGame.DrawText("Tub", Color.Yellow, GameFont("Menu"), SHIPS_LEFT + 273, SHIPS_TOP);
+		SwinGame.DrawText("Submarine", Color.Yellow, GameFont("Menu"), SHIPS_LEFT + 225, SHIPS_TOP + 90);
+		SwinGame.DrawText("Destroyer", Color.Yellow, GameFont("Menu"), SHIPS_LEFT + 225, SHIPS_TOP + 180);
+		SwinGame.DrawText("Battleship", Color.Yellow, GameFont("Menu"), SHIPS_LEFT + 221, SHIPS_TOP + 270);
+		SwinGame.DrawText("Aircraft Carrier", Color.Yellow, GameFont("Menu"), SHIPS_LEFT + 182, SHIPS_TOP + 360);
+
 
 		if (HumanPlayer.ReadyToDeploy) {
 			SwinGame.DrawBitmap(GameImage("PlayButton"), PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP);
