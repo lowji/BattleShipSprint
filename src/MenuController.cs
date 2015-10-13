@@ -48,11 +48,11 @@ static class MenuController
 		}
 
 	};
-	private const int MENU_TOP = 575;
-	private const int MENU_LEFT = 30;
+	private const int MENU_TOP = 430;
+	private const int MENU_LEFT = 20;
 	private const int MENU_GAP = 0;
-	private const int BUTTON_WIDTH = 75;
-	private const int BUTTON_HEIGHT = 15;
+	private const int BUTTON_WIDTH = 190;
+	private const int BUTTON_HEIGHT = 75;
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 
 	private const int TEXT_OFFSET = 0;
@@ -176,7 +176,7 @@ static class MenuController
 		//SwinGame.DrawText("Settings", Color.White, GameFont("ArialLarge"), 50, 50)
 
 		DrawButtons(MAIN_MENU);
-		DrawButtons(SETUP_MENU, 1, 0);
+		DrawButtons(SETUP_MENU, -1, 0);
 	}
 
 	/// <summary>
