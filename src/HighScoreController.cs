@@ -39,7 +39,7 @@ static class HighScoreController
 	private const int BUTTON_SEP = BUTTON_WIDTH + MENU_GAP;
 	private const int TEXT_OFFSET = 0;
 	private const int HIGHSCORE_MENU = 0;
-	private const int NAME_WIDTH = 3;
+	private const int NAME_WIDTH = 5;
 	private const int SCORES_LEFT = 490;
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
@@ -176,7 +176,7 @@ static class HighScoreController
 		if (_Scores.Count == 0)
 			LoadScores();
 
-		SwinGame.DrawText("   High Scores   ", Color.White, GameFont("Menu"), SCORES_LEFT, SCORES_HEADING);
+		SwinGame.DrawText("   High Scores   ", Color.SkyBlue, GameFont("CourierLarge"), SCORES_LEFT, SCORES_HEADING);
 
 		//For all of the scores
 		int i = 0;
@@ -187,9 +187,9 @@ static class HighScoreController
 
 			//for scores 1 - 9 use 01 - 09
 			if (i < 9) {
-				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.White, GameFont("Menu"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
+				SwinGame.DrawText(" " + (i + 1) + ":   " + s.Name + "   " + s.Value, Color.SkyBlue, GameFont("CourierLarge"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			} else {
-				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.White, GameFont("Menu"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
+				SwinGame.DrawText(i + 1 + ":   " + s.Name + "   " + s.Value, Color.SkyBlue, GameFont("CourierLarge"), SCORES_LEFT, SCORES_TOP + i * SCORE_GAP);
 			}
 		}
 		DrawButtons (HIGHSCORE_MENU, 0, 0);
@@ -233,9 +233,9 @@ static class HighScoreController
 			AddNewState(GameState.ViewingHighScores);
 
 			int x = 0;
-			x = SCORES_LEFT + SwinGame.TextWidth(GameFont("Menu"), "Name: ");
+			x = SCORES_LEFT + SwinGame.TextWidth(GameFont("CourierLarge"), "Name: ");
 
-			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameFont("Courier"), x, ENTRY_TOP);
+			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameFont("CourierLarge"), x, ENTRY_TOP);
 
 			//Read the text from the user
 			while (SwinGame.ReadingText()) {
@@ -243,14 +243,14 @@ static class HighScoreController
 
 				DrawBackground();
 				DrawHighScores();
-				SwinGame.DrawText("Name: ", Color.White, GameFont("Menu"), SCORES_LEFT, ENTRY_TOP);
+				SwinGame.DrawText("Name: ", Color.SkyBlue, GameFont("CourierLarge"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
 
 			s.Name = SwinGame.TextReadAsASCII();
 
-			if (s.Name.Length < 3) {
-				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
+			if (s.Name.Length < 6) {
+				s.Name = s.Name + new string(Convert.ToChar(" "), 6 - s.Name.Length);
 			}
 
 			_Scores.RemoveAt(_Scores.Count - 1);
