@@ -11,3 +11,4 @@ f:[0-6],[0-6],7,
 //
 //i:NAME,ID-START
 i:splash,0
+i:explosion,0
